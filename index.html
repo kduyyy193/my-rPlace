@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Drawing</title>
+    <style>
+        body {
+            width: 100vw;
+        }
+
+        #canvas {
+            border: 1px solid black;
+            margin: 20px auto;
+            display: flex;
+        }
+
+        .color-picker {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            cursor: pointer;
+            border: 1px solid #000;
+            border-radius: 2px;
+        }
+
+        .active {
+            border: 1px solid #ff4500;
+            box-shadow: 0 0 5px #f2622d;
+        }
+
+        #tools {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 20px 40px;
+            max-width: 100vw;
+        }
+
+        #colors,
+        #pickColor {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        #pickColor {
+            max-width: 440px;
+        }
+
+        #saveToLocal {
+            margin-left: auto;
+        }
+
+        #colorInput {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        #upLoad {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tools">
+        <div id="colors">
+            <div id="pickColor">
+                <div class="color-picker" style="background-color: #e2f2f8;" data-color="#e2f2f8"></div>
+                <div class="color-picker" style="background-color: #cecdd6;" data-color="#cecdd6"></div>
+                <div class="color-picker" style="background-color: #bbc2c5;" data-color="#bbc2c5"></div>
+                <div class="color-picker" style="background-color: #82a7ca;" data-color="#82a7ca"></div>
+                <div class="color-picker" style="background-color: #2e2f34;" data-color="#2e2f34"></div>
+                <div class="color-picker" style="background-color: #ffb7c6;" data-color="#ffb7c6"></div>
+                <div class="color-picker" style="background-color: #f6b5c8;" data-color="#f6b5c8"></div>
+                <div class="color-picker" style="background-color: #c1a283;" data-color="#c1a283"></div>
+                <div class="color-picker" style="background-color: #e6b88f;" data-color="#e6b88f"></div>
+                <div class="color-picker" style="background-color: #a97a5e;" data-color="#a97a5e"></div>
+                <div class="color-picker" style="background-color: #6a5cff;" data-color="#6a5cff"></div>
+                <div class="color-picker" style="background-color: #f0ad4e;" data-color="#f0ad4e"></div>
+                <div class="color-picker" style="background-color: #45aced;" data-color="#45aced"></div>
+                <div class="color-picker" style="background-color: #1da1f2;" data-color="#1da1f2"></div>
+            </div>
+            <input type="text" id="colorInput" placeholder="#000000">
+        </div>
+        <div id="saveToLocal">
+            <button id="saveBtn">Save</button>
+            <button id="loadBtn">Load</button>
+        </div>
+    </div>
+    <div id="upLoad">
+        <input type="file" id="uploadImage" accept="image/*">
+        <button id="toggleImageBtn">Toggle Image</button>
+    </div>
+    <div>
+        <label for="canvasWidth">Width:</label>
+        <input type="number" id="canvasWidth">
+        <label for="canvasHeight">Height:</label>
+        <input type="number" id="canvasHeight">
+        <button id="setSizeBtn">Set Size</button>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="script.js"></script>
+</body>
+
+</html>
